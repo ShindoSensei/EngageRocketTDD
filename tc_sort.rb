@@ -28,5 +28,10 @@ class TestSort < Test::Unit::TestCase
     assert_equal([1,2,3], sort([3,1,2]))  #Additional test, 1st & 2nd swap, then 2nd & 3rd swap (multiple moves).
     assert_equal([1,2,3], sort([2,3,1]))  #Additional test, 2nd & 3rd swap, then 1st & 2nd swap (multiple moves)
   end
+    #No need to test >3 element array, as above tests, if passed, show that sort algo capable of adjacent, non-adjacent, one move or multiple movement swaps.
 
+    #However, it would be good to also test that input argument is clean.
+    #Example,
+    #1) Test that arr is indeed an array
+    #2) Test that array elements are all integers for comparison to be possible
 end
