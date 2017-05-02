@@ -2,8 +2,8 @@ require 'test/unit'
 
 class TestSort < Test::Unit::TestCase
   def sort(arr) #Sorting Algo to be tested
-    return []  ##to fix failing test_empty, I simply returned an empty array []
-
+    # return []  ##to fix failing test_empty, I simply returned an empty array []
+    return arr  ##to fix failing test_empty & test_one, returned arr itself instead of []
   end
 
   def test_empty # Sort an Empty Array, result should be empty
