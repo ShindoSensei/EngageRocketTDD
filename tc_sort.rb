@@ -15,14 +15,18 @@ class TestSort < Test::Unit::TestCase
     assert_equal([1], sort([1]))
   end
 
-  def test_two # Sort Array with 2 items (reversed order), return Array elements in asc order
+  def test_two # Sort Array with 2 items (reversed order), return correct order array
     assert_equal([1,2], sort([2,1]))
   end
 
   def test_three #Sort Array with 3 items, return Array elements in asc order
-    assert_equal([1,2,3], sort([1,2,3]))
-    assert_equal([1,2,3], sort([2,1,3]))
-    assert_equal([1,2,3], sort([1,3,2]))
+    assert_equal([1,2,3], sort([1,2,3]))  #Already correct
+    assert_equal([1,2,3], sort([2,1,3]))  #1st & 2nd swap (adjacent, One move)
+    assert_equal([1,2,3], sort([1,3,2]))  #2nd & 3rd swap (adjacent, One move)
+    #3 more test cases below to test robustness of sort algo for non-adjacent and multiple movements within array.
+    assert_equal([1,2,3], sort([3,2,1]))  #Additional test, 1st & 3rd swap (non-adj, One move)
+    assert_equal([1,2,3], sort([3,1,2]))  #Additional test, 1st & 2nd swap, then 2nd & 3rd swap (multiple moves).
+    assert_equal([1,2,3], sort([2,3,1]))  #Additional test, 2nd & 3rd swap, then 1st & 2nd swap (multiple moves)
   end
 
 end
