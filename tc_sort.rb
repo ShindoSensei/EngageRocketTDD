@@ -3,7 +3,8 @@ require 'test/unit'
 class TestSort < Test::Unit::TestCase
   def sort(arr) #Sorting Algo to be tested
     # return []  ##to fix failing test_empty, I simply returned an empty array []
-    return arr  ##to fix failing test_empty & test_one, returned arr itself instead of []
+    # return arr  ##to fix failing test_empty & test_one, returned arr itself instead of []
+    return arr.sort ##to fix failing test_empty,test_one & test_two, returned arr.sort instead of arr. This managed to pass test_three at the same time. All assertions passed
   end
 
   def test_empty # Sort an Empty Array, result should be empty
